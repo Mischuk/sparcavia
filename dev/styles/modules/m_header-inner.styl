@@ -1,0 +1,96 @@
+.m_header-inner
+  position static !important
+  background #fafafa
+  width 100%
+  padding-left 2%
+  padding-right 2%
+  @media screen and (max-width: 700px)
+    display block !important
+    padding-top 0 !important
+    background #ebebeb
+  .top
+    clearfix()
+    @media screen and (max-width: 700px)
+      display none
+    ul li a
+      color $blue
+      border-bottom 1px solid $border-blue
+      &:hover
+        border-color $blue
+    .lang
+      a
+        span
+          color $blue
+          border-bottom 1px solid $border-blue
+          &:hover
+            border-color $blue
+      .current a
+        border-color $black
+        span
+          color $black
+
+  .breadcrumbs
+    text-align left
+    padding-bottom 15px
+    padding-right 60px
+    margin-top -30px
+    @media screen and (max-width: 700px)
+      margin-top 0
+      padding-right 0
+      padding-bottom 0
+    ul
+      float none
+      cursor default
+      @media screen and (max-width: 700px)
+        display none
+      li
+        position relative
+        margin-right 0
+        &:after
+          content '→'
+          font-size 13px
+          line-height 13px
+          margin-left 7px
+          margin-right 5px
+          color #C3C2C2
+        &:last-child
+          &:after
+            display none
+
+        a, span
+          color #8d8d8d
+          font-size 13px
+          line-height 13px
+        a
+          border-bottom 1px solid $border-black
+          &:hover
+            color $black
+        span
+          cursor default
+    .mobile
+      display none
+      @media screen and (max-width: 700px)
+        display block
+        a
+          position relative
+          display inline-block
+          vertical-align middle
+          padding-top 10px
+          padding-bottom 10px
+          color $black
+          font-size 24px
+          line-height 1
+          padding-left 40px
+          &:after
+            icon()
+            content '\e904'
+            position absolute
+            left 0
+            top 50%
+            font-size 24px
+            line-height 1
+            margin-top -12px
+            // padding-top 10px
+            // padding-bottom 10px
+            font-weight bold
+            color $black

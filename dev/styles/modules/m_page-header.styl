@@ -1,0 +1,45 @@
+.m_page-header
+  position relative
+  .headling
+    padding-left 0
+    padding-right 25%
+    @media screen and (max-width: 900px)
+      padding-right 0
+      padding-bottom 0
+    &.inline
+      display inline-block
+      vertical-align middle
+      padding-right 0
+  .pdf
+    position absolute
+    right 0
+    top 0
+    @media screen and (max-width: 900px)
+      display none
+    a
+      display inline-block
+      vertical-align middle
+      position relative
+      padding-left 45px
+      color $blue
+      text-decoration underline
+      font-size 15px
+      line-height 20px
+      &:after
+        content ''
+        width 37px
+        height 40px
+        background url("../images/pdf-active.png") no-repeat 0 0
+        background url("../images/pdf.png") no-repeat 0 0
+        position absolute
+        left 0
+        top 50%
+        margin-top -18px
+      &:hover:after
+        background-image url("../images/pdf-active.png")
+  .m_section-nav
+    display inline-block
+    vertical-align middle
+    margin-top 20px
+
+

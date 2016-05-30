@@ -1,13 +1,32 @@
 /*!=========================
       Base grid styles
 ==========================*/
+$footerHeight = 240px
+$sidebarWidth = 215px
+$sidebarWidthFuild = 18%
+
 html, body
   height 100%
 body
+  font-family 'Open Sans', sans-serif
   font-size 16px
   line-height 1.2
-  color #000
+  color $black
   background #fff
+.container
+  position relative
+  min-height 100%
+  // height 1px
+.main
+  padding-bottom $footerHeight
+  min-height 100%
+  // height 1px
+.m_footer
+  position absolute
+  left 0
+  bottom 0
+  width 100%
+  height $footerHeight
 .wrapper
   clearfix()
   position relative
@@ -17,8 +36,99 @@ body
   padding-right 15px
   margin-left auto
   margin-right auto
-  @media screen and (max-width: 1200px)
-    width 750px
+.row
+  clearfix()
 .helper
   display table-cell
   vertical-align middle
+  width 100%
+.col-1-of-3
+  width 33.333%
+  table-layout fixed
+.col-1-of-2
+  width 50%
+.main
+  padding-left $sidebarWidth
+  @media screen and (max-width: 1200px)
+    padding-left $sidebarWidthFuild
+  @media screen and (max-width: 700px)
+    padding-left 0
+  .m_sidebar
+    position fixed
+    left 0
+    top 0
+    width $sidebarWidth
+    @media screen and (max-width: 1200px)
+      width $sidebarWidthFuild
+    @media screen and (max-width: 700px)
+      width 100%
+      height 80px
+      position relative !important
+      top 0 !important
+      left 0 !important
+.body-layout,
+.sidebar-layout
+  smooth()
+  background rgba(0,0,0,.6)
+.body-layout
+  position static
+  left 0
+  top 0
+  width 0
+  height 0
+  z-index 20
+  &.open
+    position fixed
+    width 100%
+    height 100%
+
+main.content
+  display block
+  padding-left 2%
+  padding-right 2%
+  padding-bottom 2%
+  @media screen and (max-width: 420px)
+    padding-left 5%
+    padding-right 5%
+    padding-bottom 5%
+  > .headling
+    padding-left 0
+    padding-right 0
+  .full
+    position relative
+    width 104%
+    left -2%
+    @media screen and (max-width: 420px)
+      width 110%
+      left -5%
+
+.service-links
+  overflow hidden
+.service-links .m_table-item
+  float left
+
+.service-links.elements-1 .m_table-item,
+.service-links.elements-4 .m_table-item:last-child,
+.service-links.elements-7 .m_table-item:last-child,
+.service-links.elements-10 .m_table-item:last-child
+  width 100%
+.service-links.elements-2 .m_table-item,
+.service-links.elements-5 .m_table-item:nth-child(4),
+.service-links.elements-5 .m_table-item:nth-child(5),
+.service-links.elements-8 .m_table-item:nth-child(7),
+.service-links.elements-8 .m_table-item:nth-child(8)
+  width 50%
+  @media screen and (max-width: 700px)
+    width 100%
+
+.service-links.elements-3 .m_table-item,
+.service-links.elements-4 .m_table-item,
+.service-links.elements-5 .m_table-item,
+.service-links.elements-6 .m_table-item,
+.service-links.elements-7 .m_table-item,
+.service-links.elements-8 .m_table-item,
+.service-links.elements-9 .m_table-item,
+.service-links.elements-10 .m_table-item
+  width 33.333%
+  @media screen and (max-width: 700px)
+    width 100%

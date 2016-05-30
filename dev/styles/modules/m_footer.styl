@@ -1,0 +1,83 @@
+.m_footer
+  clearfix()
+  z-index 19
+  padding-top 35px
+  padding-left 2%
+  padding-right 2%
+  background url("../images/texture_footer.jpg") repeat 0 0
+  box-shadow 215px 0 15px rgba(0, 0, 0, .25)
+  @media screen and (max-width: 1200px)
+    box-shadow none
+  @media screen and (max-width: 700px)
+    padding-top 15px
+  @media screen and (max-width: 420px)
+    padding-left 5%
+    padding-right 5%
+  a
+    display inline-block
+    vertical-align middle
+    line-height 1
+    color $blue
+    border-bottom 1px solid $border-blue
+    &:hover
+      border-color $blue
+  .left, .nav
+    width 50%
+    float left
+    color $gray-dark
+    font-size 14px
+    @media screen and (max-width: 700px)
+      float none
+      width 100%
+  .developed
+    position absolute
+    right 15px
+    bottom 32px
+    font-size 12px
+    color $gray-dark
+    @media screen and (max-width: 700px)
+      position static
+      padding-top 20px
+    @media screen and (max-width: 380px)
+      padding-top 15px
+  .copy, .at-map
+    margin-bottom 25px
+  .copy
+    @media screen and (max-width: 350px)
+      width 80%
+  .locate
+    margin-bottom 5px
+  .contacts
+    color $gray
+    span
+      color $gray-dark
+      font-weight bold
+    .tel, .fax
+      margin-bottom 5px
+    .email
+      margin-top 15px
+      @media screen and (max-width: 420px)
+        margin-top 0
+  .nav
+    clearfix()
+    max-width 400px
+    @media screen and (max-width: 700px)
+      display none
+    ul
+      float left
+      width 50%
+      li
+        margin-bottom 15px
+        a
+          color $border-blue
+          text-decoration underline
+          border-bottom none
+          span
+            color $blue
+          &:hover
+            color rgba(12, 81, 161, .99)
+            span
+              color rgba(12, 81, 161, .99)
+
+
+

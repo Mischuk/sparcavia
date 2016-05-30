@@ -1,0 +1,63 @@
+.m_productions-list
+  clearfix()
+  .item
+    display inline-block
+    vertical-align top
+    width 32%
+    padding-right 150px
+    margin-bottom 60px
+    text-align left
+    @media screen and (max-width: 1200px)
+      padding-right 50px
+    @media screen and (max-width: 700px)
+      width 49%
+      text-align center
+      padding-left 25px
+      padding-right 25px
+    @media screen and (max-width: 420px)
+      width 100%
+      display block
+      padding-right 0
+      padding-left 0
+      margin-bottom 20px
+    a
+      display block
+      .icon
+        display block
+        text-align left
+        height 130px
+        width 100%
+        line-height 130px
+        @media screen and (max-width: 700px)
+          text-align center
+        @media screen and (max-width: 420px)
+          height 100px
+          line-height 100px
+        &:hover
+          img
+            &.normal
+              display none
+            &.hover
+              display inline-block
+
+        img
+          anim()
+          display inline-block
+          vertical-align middle
+          max-width 100%
+          max-height 100%
+          &.normal
+            display inline-block
+          &.hover
+            display none
+          @media screen and (max-width: 420px)
+            max-height 90%
+      .label
+        color rgba(12, 81, 161, .4)
+        text-decoration underline
+        span.underline
+          color #0c51a1
+        &:hover
+          color rgba(12, 81, 161, .99)
+          span
+            color rgba(12, 81, 161, .99)

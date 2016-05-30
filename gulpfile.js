@@ -7,40 +7,44 @@ var plumber      = require('gulp-plumber');
 var rigger       = require('gulp-rigger');
 var notify       = require('gulp-notify');
 var cleanCSS     = require('gulp-clean-css');
+var beep         = require('beepbeep');
+var colors       = require('colors');
 
 
 // Local server
 gulp.task('connect', function () {
   connect.server({
-    root: ['./app'],
+    root: ['app'],
     livereload: true
   });
+  connect.reload();
+  beep();
 });
 // INDEX
 gulp.task('index', function () {
-  return gulp.src('./dev/index.html')
-    .pipe(gulp.dest('./app/'))
+  return gulp.src('dev/index.html')
+    .pipe(gulp.dest('app/'))
     .pipe(connect.reload());
 });
 // HTML
 gulp.task('html', function () {
-  return gulp.src('./dev/templates/**/*.html')
+  return gulp.src('dev/templates/**/*.html')
     .pipe(rigger())
-    .pipe(gulp.dest('./app/templates/'))
+    .pipe(gulp.dest('app/templates/'))
     .pipe(connect.reload());
 });
 
 // JS
 gulp.task('js', function () {
-  return gulp.src('./dev/scripts/*.js')
-    .pipe(gulp.dest('./app/scripts/'))
+  return gulp.src('dev/scripts/*.js')
+    .pipe(gulp.dest('app/scripts/'))
     .pipe(connect.reload());
 });
 
 // Images
 gulp.task('images', function () {
-  return gulp.src('./dev/images/**/*.*')
-    .pipe(gulp.dest('./app/images/'))
+  return gulp.src('dev/images/**/*.*')
+    .pipe(gulp.dest('app/images/'))
     .pipe(connect.reload());
 });
 
@@ -55,7 +59,7 @@ gulp.task('styl', function() {
     this.emit('end');
   };
 
-  return gulp.src("./dev/styles/app.styl")
+  return gulp.src("dev/styles/app.styl")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sourcemaps.init())
     .pipe(stylus())
@@ -65,27 +69,27 @@ gulp.task('styl', function() {
       ]
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./app/styles"))
+    .pipe(gulp.dest("app/styles"))
     .pipe(connect.reload());
 });
 
 // CSS
 gulp.task('vendor', function () {
-  return gulp.src('./dev/styles/vendor.css')
+  return gulp.src('dev/styles/vendor.css')
     .pipe(cleanCSS({compatibility: 'ie9'}))
-    .pipe(gulp.dest('./app/styles/'))
+    .pipe(gulp.dest('app/styles/'))
     .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
-  gulp.watch("./dev/index.html", ['index']);
-  gulp.watch("./dev/templates/*.html", ['html']);
-  gulp.watch("./dev/templates/modules/*.html", ['html']);
-  gulp.watch("./dev/scripts/*.js", ['js']);
-  gulp.watch("./dev/images/**/*.*", ['images']);
-  gulp.watch("./dev/styles/**/*.styl", ['styl']);
-  gulp.watch("./dev/styles/vendor.css", ['vendor']);
+  gulp.watch("dev/index.html", ['index']);
+  gulp.watch("dev/templates/*.html", ['html']);
+  gulp.watch("dev/templates/modules/*.html", ['html']);
+  gulp.watch("dev/scripts/*.js", ['js']);
+  gulp.watch("dev/images/**/*.*", ['images']);
+  gulp.watch("dev/styles/**/*.styl", ['styl']);
+  gulp.watch("dev/styles/vendor.css", ['vendor']);
 });
 
 // Watching project files
-gulp.task('default', ['index', 'html', 'js', 'images', 'styl', 'vendor', 'connect', 'watch']);
+gulp.task('default', ['index', 'html', 'js', 'images', 'styl', 'vendor', 'watch', 'connect']);

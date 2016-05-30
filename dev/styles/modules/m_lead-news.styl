@@ -1,0 +1,20 @@
+.m_lead-news
+  clearfix()
+  display table
+  table-layout fixed
+  @media screen and (max-width: 700px)
+    display block
+  .m_item
+    display table-cell
+    vertical-align top
+    width 33.333%
+    max-width 33.333%
+    min-width 33.333%
+    @media screen and (max-width: 700px)
+      display block
+      width 100%
+      max-width 100%
+      min-width 100%
+    &:first-child
+      .description
+        border-left none
