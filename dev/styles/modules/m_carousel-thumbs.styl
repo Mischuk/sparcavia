@@ -1,0 +1,63 @@
+.m_carousel-thumbs
+  height 530px
+  margin-bottom 30px
+  margin-top 30px
+  @media screen and (max-width: 480px)
+    height 440px
+  .carousel-thumbs-single
+    height 400px
+    @media screen and (max-width: 480px)
+      height 320px
+    .slide
+      height 400px
+      @media screen and (max-width: 480px)
+        height 320px
+    iframe
+      width 100% !important
+      height 100% !important
+  .carousel-thumbs-thumbs
+    height 130px
+    @media screen and (max-width: 480px)
+      height 120px
+    .slide
+      height 130px
+      @media screen and (max-width: 480px)
+        height 120px
+      .image
+        position relative
+        &.video
+          &:after
+            anim()
+            icon()
+            content '\e903'
+            position absolute
+            left 0
+            top 0
+            width 100%
+            height 100%
+            line-height 130px
+            text-align center
+            color #fff
+            color rgba(255,2555,255,.5)
+            font-size 50px
+          &:hover:after
+            color #fff
+
+        &:before
+          content ''
+          background rgba(0,0,0,.5)
+          position absolute
+          left 0
+          top 0
+          width 100%
+          height 100%
+          anim()
+      &.slick-current .image:before,
+      &:hover .image:before
+        background rgba(0,0,0,0)
+  .image
+    background-position 50%
+    background-size cover
+    background-repeat no-repeat
+    width 100%
+    height 100%

@@ -16,11 +16,8 @@ body
 .container
   position relative
   min-height 100%
-  // height 1px
 .main
   padding-bottom $footerHeight
-  min-height 100%
-  // height 1px
 .m_footer
   position absolute
   left 0
@@ -86,14 +83,37 @@ main.content
   display block
   padding-left 2%
   padding-right 2%
-  padding-bottom 2%
+  padding-bottom 30px
   @media screen and (max-width: 420px)
     padding-left 5%
     padding-right 5%
-    padding-bottom 5%
-  > .headling
-    padding-left 0
-    padding-right 0
+  ol
+    counter-reset item
+    li
+      position relative
+      display block
+      padding-left 30px
+      margin-bottom 25px
+      &:last-child
+        margin-bottom 0
+      &:before
+        content: counter(item) ". "
+        counter-increment item
+        color $blue
+        position absolute
+        left 0
+        top 0
+
+  .headling
+    padding 0 0 25px 0
+    &.mobile-hidden
+      padding-top 15px
+    @media screen and (max-width: 568px)
+      padding-top 25px
+    & + ul
+      padding-top 5%
+      @media screen and (max-width: 568px)
+        padding-top 5%
   .full
     position relative
     width 104%
@@ -101,7 +121,81 @@ main.content
     @media screen and (max-width: 420px)
       width 110%
       left -5%
+  .article
+    .headling
+      padding-top 15px
+  .lead-article-image
+    img
+      height auto
+      width 100%
+  .lead-image
+    background-repeat no-repeat
+    background-position 50% 50%
+    background-size cover
+    height 400px
+    @media screen and (max-width: 568px)
+      height 320px
+  .columns
+    clearfix()
+    .left
+      width 48%
+      float left
+      @media screen and (max-width: 700px)
+        width 100%
+        float none
+    .right
+      float right
+      width 48%
+      @media screen and (max-width: 700px)
+        width 100%
+        float none
+      .image
+        width 100%
+        text-align center
+        .thumb
+          display block
+          height 300px
+          line-height 300px
+          width 100%
+          background-repeat no-repeat
+          background-position 50%
+          background-size cover
+        .label
+          margin-top 20px
+          display inline-block
+          vertical-align middle
+          underline()
+        &.video
+          .thumb
+            position relative
+            &:before
+              content ''
+              position absolute
+              left 0
+              top 0
+              width 100%
+              height 100%
+              background rgba(0,0,0,.3)
+            &:after
+              anim()
+              icon()
+              content '\e903'
+              position absolute
+              left 0
+              top 0
+              width 100%
+              height 100%
+              line-height 300px
+              text-align center
+              color #fff
+              color rgba(255,2555,255,.5)
+              font-size 50px
+            &:hover:after
+              color #fff
 
+
+.m_services
+  margin-bottom -30px
 .service-links
   overflow hidden
 .service-links .m_table-item
@@ -132,3 +226,6 @@ main.content
   width 33.333%
   @media screen and (max-width: 700px)
     width 100%
+.mobile-hidden
+  @media screen and (max-width: 700px)
+    display none !important

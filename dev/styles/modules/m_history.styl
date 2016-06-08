@@ -1,0 +1,61 @@
+.m_history
+  .slogan
+    color #404040
+    font-size 30px
+    line-height 1
+    margin-bottom 20px
+    margin-top 10px
+    @media screen and (max-width: 700px)
+      font-size 24px
+      margin-top 5%
+  .timelime
+    .images
+      clearfix()
+      &.single,
+      &.half
+        .image
+          height 500px
+          background-repeat no-repeat
+          background-position 50% 50%
+          background-size cover
+          @media screen and (max-width: 700px)
+            height 400px
+          @media screen and (max-width: 568px)
+            height 320px
+      &.single .image
+        width 100%
+      &.half
+        .image
+          width 48%
+          float left
+          @media screen and (max-width: 700px)
+            float none
+            width 100%
+            margin-bottom 15px
+          & + .image
+            margin-left 4%
+            @media screen and (max-width: 700px)
+              margin-left 0
+
+    li
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 25px;
+      &:before
+        content ''
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 10px;
+        height: 1px;
+        background: #ed1650;
+      .date
+        color #404040
+        font-weight bold
+        font-size 16px
+        margin-bottom 20px
+      .value
+        font-size 15px
+        margin-bottom 20px
+

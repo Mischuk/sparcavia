@@ -8,7 +8,6 @@ var rigger       = require('gulp-rigger');
 var notify       = require('gulp-notify');
 var cleanCSS     = require('gulp-clean-css');
 var beep         = require('beepbeep');
-var colors       = require('colors');
 
 
 // Local server
@@ -18,7 +17,7 @@ gulp.task('connect', function () {
     livereload: true
   });
   connect.reload();
-  beep();
+  beep(2, 1000);
 });
 // INDEX
 gulp.task('index', function () {
@@ -64,9 +63,7 @@ gulp.task('styl', function() {
     .pipe(sourcemaps.init())
     .pipe(stylus())
     .pipe(autoprefixer({
-      browsers: [
-        'last 2 versions'
-      ]
+      browsers: ['last 2 version', 'safari 5', 'ie 6', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("app/styles"))

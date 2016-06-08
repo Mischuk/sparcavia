@@ -1,0 +1,37 @@
+html.IE
+  .m_lead-intro-small .m_table-item,
+  .m_table-item,
+  .m_item
+    .image
+      .hover
+        opacity 0 !important
+        transition all .5s ease-in !important
+        &:after
+          transition-delay 0 !important
+        &.anim-in
+          opacity 1 !important
+          transition-delay 0 !important
+        &.anim-out
+          opacity 0 !important
+          transition-delay 0 !important
+
+html.firefox
+  .m_item,
+  .m_table-item
+    .hover
+      &:after
+        left 0
+        top 0
+        opacity 0
+        transform translateX(0%) translateY(0%) !important
+      &.anim-in
+        &:after
+          opacity 1
+          transition opacity .5s ease-out
+          transition-delay .75s
+      &.anim-out
+        &:after
+          opacity 0
+          transition opacity .25s ease-out
+          transition-delay 0s
+

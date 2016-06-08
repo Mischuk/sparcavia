@@ -1,0 +1,100 @@
+.m_contacts-item
+  .info
+    padding-left 30px
+    padding-bottom 30px
+    border-bottom 1px solid #dcdcdc
+    color #404040
+    .locate, .tels, .email
+      position relative
+    .icon-locate,
+    .icon-tel,
+    .icon-email
+      position absolute
+      left -30px
+      top 4px
+      font-size 24px
+      color #dcdcdc
+    .icon-email
+      top -2px
+    .tels
+      margin-bottom 20px
+      p
+        margin 0
+        font-size 20px
+        line-height 28px
+        font-weight 600
+    .email
+      a
+        color $blue
+        font-size 15px
+        &:hover
+          text-decoration underline
+    .at-map
+      margin-bottom 20px
+      a
+        font-size 15px
+        underline()
+  .managers
+    clearfix()
+    .item
+      clearfix()
+      position relative
+      display inline-block
+      vertical-align top
+      width 48%
+      min-height 140px
+      margin-top 30px
+      @media screen and (max-width: 700px)
+        display block
+        width 100%
+      .image
+        float left
+        width 100px
+        height 140px
+        background-repeat no-repeat
+        background-position top center
+        background-size cover
+        margin-right 10px
+        @media screen and (max-width: 360px)
+          height 185px
+      .manager-info
+        .from
+          color #404040
+          font-size 13px
+          line-height 13px
+          margin-bottom 10px
+        .name
+          font-weight 700
+          font-size 15px
+          line-height 15px
+        .status
+          color #8d8d8d
+          font-size 15px
+          margin-top 5px
+        .tel
+          margin-top 20px
+          margin-bottom 10px
+          @media screen and (max-width: 360px)
+            margin-top 20px
+        .email, .tel
+          color #404040
+          span
+            color $black
+            font-weight 600
+            @media screen and (max-width: 360px)
+              display block
+              font-size 14px
+          a
+            color #024da1
+            @media screen and (max-width: 360px)
+              display block
+              font-size 14px
+            &:hover
+              text-decoration underline
+  .map
+    height 400px
+    width 100%
+    margin-bottom -30px
+    margin-top 30px
+    @media screen and (max-width: 700px)
+      height 320px

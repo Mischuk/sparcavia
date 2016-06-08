@@ -1,0 +1,24 @@
+.m_pdf
+  margin-top 25px
+  margin-bottom 25px
+  a
+    display inline-block
+    vertical-align middle
+    position relative
+    padding-left 45px
+    color $blue
+    text-decoration underline
+    font-size 15px
+    line-height 20px
+    &:after
+      content ''
+      width 37px
+      height 40px
+      background url("../images/pdf-active.png") no-repeat 0 0
+      background url("../images/pdf.png") no-repeat 0 0
+      position absolute
+      left 0
+      top 50%
+      margin-top -18px
+    &:hover:after
+      background-image url("../images/pdf-active.png")

@@ -1,15 +1,18 @@
 .m_page-header
   position relative
-  .headling
-    padding-left 0
+  div.headling
     padding-right 25%
     @media screen and (max-width: 900px)
       padding-right 0
-      padding-bottom 0
     &.inline
       display inline-block
       vertical-align middle
       padding-right 0
+      @media screen and (max-width: 900px)
+        padding-bottom 25px
+      & + .m_section-nav
+        @media screen and (max-width: 700px)
+          padding-left 0
   .pdf
     position absolute
     right 0
@@ -40,6 +43,7 @@
   .m_section-nav
     display inline-block
     vertical-align middle
-    margin-top 20px
+    margin-top 15px
+    margin-bottom 0
 
 

@@ -4,6 +4,21 @@
   height 555px
   @media screen and (max-width: 700px)
     height 400px
+  @media screen and (max-height: 300px)
+    height 300px
+  @media screen and (max-height: 270px)
+    height 270px
+  &.full
+    position relative
+    height 400px
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background rgba(0,0,0,.20)
   .slogan
     display table
     text-align center
@@ -25,3 +40,4 @@
         display none
         @media screen and (max-width: 900px)
           display block
+

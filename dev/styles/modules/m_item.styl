@@ -1,10 +1,10 @@
 .m_item
   position relative
+  overflow hidden
   .image
     height 210px
     @media screen and (max-width: 700px) and (min-width: 421px)
       height 320px
-
     a
       display block
       width 100%
@@ -49,3 +49,102 @@
       font-size 15px
       color #8d8d8d
       cursor default
+  .image
+    position relative
+    overflow hidden
+    .hover
+      @media screen and (max-width: 1024px)
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+        opacity 0
+        &:before
+          content ''
+          position absolute
+          left 0
+          top 0
+          width 100%
+          height 100%
+          background $border-blue
+          z-index 1
+  @media screen and (min-width: 1024px)
+    .hover
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      opacity 0
+      &:after
+        content ""
+        position absolute
+        left 0
+        top auto
+        width 100%
+        height 100%
+        background url("../images/lines.png") no-repeat 0 0
+        z-index 2
+        background-size contain
+        left -100%
+        bottom -100%
+        left 0
+        bottom 0
+        transform translateX(-100%) translateY(100%)
+        transition transform .5s ease-out
+        transition-delay .75s
+      &:before
+        content ''
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+        background $border-blue
+        z-index 1
+      &.anim-in
+        opacity 1
+        animation animin 1s ease-out
+        &:after
+          transform translateX(0%) translateY(0%)
+        @keyframes animin
+          0%
+            -webkit-clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 50% 0, 50% 0);
+            clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 50% 0, 50% 0);
+          25%
+            -webkit-clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 100% 0, 0% 0);
+            clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 100% 0, 0% 0);
+          50%
+            -webkit-clip-path: polygon(50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0, 0 0);
+            clip-path: polygon(50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0, 0 0);
+          75%
+            -webkit-clip-path: polygon(50% 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+            clip-path: polygon(50% 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+          100%
+            -webkit-clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+            clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+      &.anim-out
+        opacity 1
+        animation animout .5s ease-out
+        &:after
+          left -100%
+          bottom -100%
+          transition transform 1s ease-out
+          transition-delay 0s
+        @keyframes animout
+          0%
+            -webkit-clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+            clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+          25%
+            -webkit-clip-path: polygon(50% 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+            clip-path: polygon(50% 50%, 0 100%, 100% 100%, 100% 50%, 100% 0, 0 0);
+          50%
+            -webkit-clip-path: polygon(50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0, 0 0);
+            clip-path: polygon(50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0, 0 0);
+          75%
+            -webkit-clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 100% 0, 0% 0);
+            clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 100% 0, 0% 0);
+          100%
+            -webkit-clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 50% 0, 50% 0);
+            clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%, 50% 0, 50% 0);

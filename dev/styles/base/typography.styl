@@ -7,7 +7,7 @@
   padding-left 2%
   padding-right 2%
   padding-bottom 25px
-  padding-top 30px
+  padding-top 25px
   @media screen and (max-width: 1024px)
     font-size 30px
     line-height 1
@@ -22,6 +22,8 @@
   &.mobile-hidden
     @media screen and (max-width: 700px)
       display none !important
+  &.pt0
+    padding-top 0 !important
 h2.headling
   padding-top 0
 
@@ -52,12 +54,18 @@ main
   p
     font-size 15px
     line-height 22px
-    margin 15px 0
+    margin 21px 0
+  .requires > ul,
+  .conditions > ul,
+  .additional > ul,
+  .columns ul,
   > ul
     li
       position relative
       padding-left 30px
       margin-bottom 25px
+      font-size 15px
+      line-height 15px
       &:before
         content ''
         position absolute
@@ -73,6 +81,7 @@ main
       underline()
       font-size 15px
       line-height 15px
+
   blockquote
     border 2px dashed $pink
     border-radius 5px
@@ -83,3 +92,9 @@ main
     line-height 26px
     padding 2%
     margin 20px 0
+
+// Paragraphs
+p.lead-paragraph
+  font-size 18px
+  line-height 28px
+  color #404040
